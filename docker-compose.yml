@@ -1,0 +1,46 @@
+version: '3.3'
+services:
+  SM_Tools:
+    image: webdevops/php-apache-dev:8.0
+    container_name: SM_Tools
+    restart: always
+    user: application
+    environment:
+      - WEB_ALIAS_DOMAIN=sm_tools.docker
+      - WEB_DOCUMENT_ROOT=/app/public
+      - DB_HOST=mysql_laravel:3306
+      - PHP_DATE_TIMEZONE=EST
+      - PHP_DISPLAY_ERRORS=1
+      - PHP_MEMORY_LIMIT=2048M
+      - PHP_MAX_EXECUTION_TIME=1800
+      - PHP_POST_MAX_SIZE=500M
+      - PHP_UPLOAD_MAX_FILESIZE=1024M
+      - PHP_EXTENSION_XDEBUG=1
+      - "http.cors.allow-origin=*"
+      - "http.cors.enabled=true"
+      - "http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization"
+      - "http.cors.allow-credentials=true"
+    volumes:
+      - ./:/app
+    ports:
+      - "80:80"
+      - "443:443"
+      - "32823:22"
+    links:
+      - mysql_smtools
+  mysql_smtools:
+    image: mariadb:10
+    container_name: mysql_smtools
+    restart: always
+    ports:
+      - "3336:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=smtools
+    volumes:
+      - ./database-dumps:/docker-entrypoint-initdb.d
+      - ./database-dumps:/database-dumps
+
+volumes:
+  db-data:
+    external: false

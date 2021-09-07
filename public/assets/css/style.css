@@ -1,3 +1,17 @@
-.main-blocks {
-    background-image: url("https://paulryan.com.au/wp-content/uploads/2015/01/high-resolution-wallpapers-25.jpg");
+body {
+    background: #0c5460;
 }
+body a {
+    color: #fff;
+}
+
+body a:hover {
+    color: #fff;
+}
+
+.main-boxes {
+    width  : 200px;
+    height : 200px;
+    border : 1px solid #000;
+}
+

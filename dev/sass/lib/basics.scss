@@ -1,0 +1,73 @@
+// ZEROWANIE
+
+*,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table,
+tr,
+td,
+th,
+ul,
+ol,
+figure {
+  margin: 0;
+  padding: 0;
+  font-smooth: always;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &::selection {
+    color: $c3;
+    background-color: $c2;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $c4;
+}
+
+html,
+body {
+  // scroll-behavior: smooth;
+  font-family: $f1;
+  color: $c20;
+
+  @media #{$mxl} {
+    &[data-body="true"] {
+      overflow: hidden;
+
+      .header {
+        position: fixed;
+        width: 100%;
+      }
+    }
+  }
+}
+
+img {
+  text-indent: -9999px;
+}
+
+p {
+  color: $c6;
+
+  * {
+    color: inherit;
+  }
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}

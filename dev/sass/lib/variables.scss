@@ -1,0 +1,108 @@
+// Czcionki
+@import "../fonts/lato.scss";
+
+// Kolory zmienne
+// $c1: #1e272e;
+// $c2: #ff9f1a;
+$c1: var(--color-main);
+$c2: var(--color-accent);
+$c3: #fff;
+$c4: #000;
+
+// Kolor Dodatkowy, akcentowy
+
+$c22: $c2; // Zmienna
+
+// Kolory obliczane
+$c5: darken($c3, 22.35);
+$c6: darken($c3, 33.33);
+$c7: "";
+$c8: darken($c3, 5.1); // Tło topu
+$c9: "";
+$c10: darken($c3, 41.96); // Domyślny kolor tekstu
+$c11: "";
+$c12: lighten($c4, 46.67); // Tekst guzików
+$c13: darken($c3, 6.67); // Kolor stopki | dół
+$c14: darken($c3, 3.53); // banner
+$c15: darken($c3, 16.86); // breadcrumb
+$c16: "";
+$c17: darken($c3, 28.24);
+$c18: "";
+$c19: darken($c3, 9.8); // Ramki
+$c20: lighten($c4, 41.57);
+$c21: darken($c3, 2.35);
+$c23: darken($c3, 12.94);
+$c24: darken($c3, 6.27);
+$c25: darken(saturate(adjust-hue($c3, 210), 6.25), 6.27);
+
+// Kolory alertów
+$a1: #e05050;
+$a2: #49c85f;
+
+// PODSTAWOWE WARTOŚCI
+
+// zmienna zaokrąglenia elementów
+$r1: var(--rounded-corners-main); // Większe elementy;
+$r2: 50%;
+$r3: 40px; // CMS
+$r4: var(--rounded-corners-second); // Mniejsze elementy
+// Czcionka
+$f1: "Poppins", sans-serif;
+// $f1: "Lato", sans-serif;
+// Easing
+$e1: 0.25s ease;
+$e2: 0.02s ease;
+$e3: 0.7s ease;
+// Shadow
+$s1: 0 20px 50px transparentize($c4, 0.95);
+$s2: 0 -20px 50px transparentize($c4, 0.95);
+//gradient
+$g1: linear-gradient(to right, $c4, transparent);
+
+/* ZMIENNE DLA MEDIA QUERIES */
+$msm: "only screen and (max-width : 575px)";
+$sm: "only screen and (min-width : 576px)";
+$mmd: "only screen and (max-width : 767px)";
+$md: "only screen and (min-width : 768px)";
+$mlg: "only screen and (max-width : 991px)";
+$lg: "only screen and (min-width : 992px)";
+$mxl: "only screen and (max-width : 1199px)";
+$xl: "only screen and (min-width : 1200px)";
+$msl: "only screen and (max-width : 1299px)";
+$sl: "only screen and (min-width : 1300px)";
+$mxxl: "only screen and (max-width : 1429px)";
+$xxl: "only screen and (min-width : 1430px)";
+$mxxxl: "only screen and (max-width : 1499px)";
+$xxxl: "only screen and (min-width : 1500px)";
+$hlg: "only screen and (min-width : 1800px)";
+$hxlg: "only screen and (min-width : 1921px)";
+
+.container {
+  @media #{$sl} {
+    max-width: 1230px;
+  }
+  @media #{$xxl} {
+    max-width: 1300px;
+
+    &.large {
+      max-width: 1370px;
+    }
+  }
+  @media #{$xxxl} {
+    &.large {
+      max-width: 1450px;
+    }
+  }
+  @media #{$hlg} {
+    &.large {
+      max-width: 1640px;
+    }
+  }
+  @media #{$hxlg} {
+    max-width: 1550px;
+
+    &.large {
+      max-width: 1700px;
+    }
+  }
+}
